@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BlogTrackerProject.Models.Bloginfo>
+
+@{
+    ViewData["Title"] = "HomeDisplay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 sstyle="text-align:center">List Of Blogs</h1>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <div class="card" style="width: 25rem;">
+            <div class="card-body">
+                <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Title) By @Html.DisplayFor(modelItem => item.EmpemailNavigation.Emailid)</h5>
+                <p class="card-text"> Date: @Html.DisplayFor(modelItem => item.DateOfCreation)</p>
+                <p class="card-text">Subject: @Html.DisplayFor(modelItem => item.Subject)</p>
+                <a href="#" class="btn btn-primary">  @Html.DisplayFor(modelItem => item.Blogurl)</a>
+
+            </div>
+        </div><br><br>
+    </tr>
+}
